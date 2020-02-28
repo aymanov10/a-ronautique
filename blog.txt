@@ -1,0 +1,16 @@
+Réunion le 26 fev :
+ * les idees de notre dernière réunion :
+on pourrait faire une application web qui consiste à : 
+
+	Nom d'un aéroport           ==>   Nom | ville | Pays | ....  ( ou inversement) 
+
+	Nom d'une compagnie         ==>   Les vols assurés par cette compagnie ( ou inversement ).
+
+	Nom d'un aéroport           ==>   Tous les départs / arrivées à cet aéroport en indiquant leurs compagnies .
+
+	Pays de départ - d'arrivée  ==>  Tous les vols directs qui relient les deux pays .
+
+	Pays                        ==> Statistique de destinations 
+
+
+on pourrait aussi relier ces informations avec la sécurité aérienne ... à suivre 

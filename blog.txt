@@ -14,3 +14,10 @@ on pourrait faire une application web qui consiste à :
 
 
 on pourrait aussi relier ces informations avec la sécurité aérienne ... à suivre 
+
+Réunion le 04 Mars  :
+
+Reformulation du fichier README.md .
+lier les informations précédentes avec celles de la sécurité aérienne.
+
+

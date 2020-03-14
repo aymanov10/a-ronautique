@@ -20,5 +20,5 @@ Réunion le 04 Mars  :
 Reformulation du fichier README.md .
 lier les informations précédentes avec celles de la sécurité aérienne.
 
-14 Mars 2020:-fouille des diverses données disponibles afin de retenir les plus pertinentes et de concevoir notre BD
+14 Mars 2020:-fouille des diverses données disponibles afin de retenir les plus pertinentes et de concevoir notre BD.
 

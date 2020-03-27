@@ -1,0 +1,77 @@
+from django.db import models
+
+# Create your models here.
+
+
+class Airports(models.Model):
+    airport_id = models.IntegerField(primary_key=True)
+    name = models.CharField(max_length=50)
+    city = models.CharField(max_length=50)
+    country = models.CharField(max_length=50)
+    IATA_airport = models.CharField(max_length=8)
+    ICAO_airport = models.CharField(max_length=8)
+    latitude = models.DecimalField(max_digits=13, decimal_places=10)
+    longitude = models.DecimalField(max_digits=13, decimal_places=10)
+    altitude = models.CharField(max_length=15)
+
+
+class Airlines(models.Model):
+    airline_id = models.IntegerField(primary_key=True)
+    name = models.CharField(max_length=40)
+    alias = models.CharField(max_length=40)
+    IATA_airline = models.CharField(max_length=8)
+    ICAO_airline = models.CharField(max_length=8)
+
+
+class Country(models.Model):
+    name = models.CharField(max_length=50, primary_key=True)
+    iso_code = models.CharField(max_length=2)
+    dafif_code = models.CharField(max_length=2)
+
+
+class Routes(models.Model):
+    class Meta:
+        unique_together = (('airline_id','source_airport_id','destination_airport_id'),)
+    airline_id = models.ForeignKey(Airlines, on_delete=models.CASCADE)
+    source_airport_id = models.ForeignKey(Airports, on_delete=models.CASCADE, related_name='+')
+    destination_airport_id = models.ForeignKey(Airports, on_delete=models.CASCADE, related_name='+')
+    source_airport = models.CharField(max_length=40)
+    destination_airport = models.CharField(max_length=40)
+    stops = models.IntegerField(default=0)
+
+
+class Aircraft(models.Model):
+    registration_number = models.CharField(max_length=60, primary_key=True)
+    amateur_built = models.CharField(max_length=60)
+    make = models.CharField(max_length=60)
+    model = models.CharField(max_length=60)
+    damage = models.CharField(max_length=60)
+    nb_of_engines = models.IntegerField(default=0)
+    engines_type = models.CharField(max_length=60)
+
+
+class Location(models.Model):
+    acc_num = models.CharField(max_length=60, primary_key=True)
+    location = models.CharField(max_length=60)
+    country = models.CharField(max_length=60)
+    latitude = models.DecimalField(max_digits=13, decimal_places=10)
+    longitude = models.DecimalField(max_digits=13, decimal_places=10)
+    airport_code = models.CharField(max_length=60)
+    airport_name = models.CharField(max_length=60)
+
+
+class Event(models.Model):
+    event_id = models.CharField(max_length=50, primary_key=True)
+    date_event = models.DateField(auto_now=False, auto_now_add=False)
+    investigation_type = models.CharField(max_length=60)
+    accident_number = models.ForeignKey(Location, on_delete=models.CASCADE)
+    injury_severity = models.CharField(max_length=60)
+    registration_number = models.ForeignKey(Aircraft, on_delete=models.CASCADE)
+
+
+class Injuries(models.Model):
+    acc_num = models.CharField(max_length=60, primary_key=True)
+    total_fatal_injuries = models.IntegerField(default=0)
+    total_serious_injuries = models.IntegerField(default=0)
+    total_minor_injuries = models.IntegerField(default=0)
+    total_uninjured = models.IntegerField(default=0)

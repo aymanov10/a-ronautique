@@ -29,3 +29,5 @@ Ajout de la conception ( fichier mcd version final .pdf)  du projet .
 23 Mars 2020  : 
 Ajout du dossier projetgp2 ( avec modification dans le fichier model.py : creation de qlq entités ) .
 
+09/04/2020 : 
+Appel telephonique ( vu le confinement ) entre nous et prendre une nouvelle piste (idee) tout en avançant vers le but . ajout des nouvelles vues ( views.py ) 

@@ -4,10 +4,20 @@ Notre trinôme est le suivant  :
        * Aymane KAMAL SEMLALI 
        * Nacir BOUTRA 
        * Samuel BABA 
-       
-       
-Notre sujet d'etude porte sur les différentes relations entre les aéroports et les compagnies ( vols assurés par ces compagnies )  .on traitra aussi la sécurité aérienne pour trouver les vols/compagnies qui ont eu beaucoup d'accidents ; le nombre de blesses , ... 
-Notre application a pour but de saisir une ou plusieurs informations dans plusieurs champs et de retourner  aux clients ( ou aux visiteurs) sur une page web les résultats de sa recherche.Par exemple on pourrait juste saisir le nom d'un pays et obtenir les noms de tous ses aéroports ainsi que les villes associées.De même concernant la base de données relative aux accidents, on pourrait renseigner le nom d'un pays ainsi que le type de l'appareil concernée( exemple un hélicoptère) et obtenir la liste de tous les accidents selon les informations saisies.Notre application renverra un message d'erreur aux visiteurs si les données saisies ne figuraient pas sur la base de données .  
+        
+  
+ Notre sujet d'étude porte sur les différentes relations entre les aéroports compagnies, vols ... Notre but est de concevoir une base de données qui gère une agence de voyages aérien ainsi que de créer une application web  qui va contenir un côté
+    - Clients : qui sert à 
+         * Réserver des vols tout en indiquant une ville de départ X et une autre d'arrivée Y et une date J et qui nous affichera un comparateur de prix des vols partant de X à Y le jour J.
+         * Saisir des réclamations des clients qui ont déjà réservé leurs billets.
+    - Personnesl : qui a pour but de
+         * Ajouter les voyages .
+         * Gérer les réservations des clients .
+         * Gérer les reclamations des clients .
+         * Faire des statistiques .
+    
+     
+  
 
 
 

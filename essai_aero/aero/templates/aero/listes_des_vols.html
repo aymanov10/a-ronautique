@@ -1,0 +1,37 @@
+{% extends "aero/personnel_index.html" %}
+
+{% block content %}
+    <div class="row">
+
+    </div>
+    <table id="example2" class="table table-bordered table-hover">
+    <thead class="thead-dark">
+        <tr>
+            <td>Compagnie</td>
+            <td>Ville de départ</td>
+            <td>Aéroport de départ</td>
+            <td>Ville d'arrivée</td>
+            <td>Aéroport d'arrivée</td>
+        </tr>
+    </thead>
+    <tbody>
+        {% for vol in les_vols %}
+            <tr>
+                <td>{{ vol.airline}}</td>
+                <td>{{vol.departure_city}}</td>
+            <td>{{vol.departure_airport}}</td>
+            <td>{{vol.arrival_city}}</td>
+            <td>{{vol.arrival_airport}}</td>
+
+            </tr>
+        {% endfor %}
+    </tbody>
+
+</table>
+ <!---
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.js"></script>
+<script type="text/javascript" src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
+<script type="text/javascript" src="https://cdn.datatables.net/1.10.20/js/dataTables.bootstrap4.min.js"></script>-->
+
+
+{% endblock content %}

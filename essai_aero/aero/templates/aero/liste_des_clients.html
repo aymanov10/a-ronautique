@@ -1,0 +1,29 @@
+{% extends "aero/personnel_index.html" %}
+{% load static %}
+
+{% block content %}
+     <table id="example" class="table table-bordered table-hover">
+    <thead class="thead-dark">
+        <tr>
+            <td>Nom</td>
+            <td>Prénom</td>
+             <td>Nationalité</td>
+             <td>Numéro de téléphone</td>
+             <td>Email </td>
+        </tr>
+    </thead>
+    <tbody>
+        {% for client in les_clients %}
+            <tr>
+                <td>{{client.last_name}}</td>
+                <td>{{client.first_name}}</td>
+                <td>{{client.nationality}}</td>
+                <td>{{client.tel}}</td>
+                <td>{{client.email}}</td>
+
+            </tr>
+        {% endfor %}
+    </tbody>
+
+
+{% endblock content %}

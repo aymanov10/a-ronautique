@@ -1,0 +1,58 @@
+{% extends 'aero/index.html' %}
+{% load static %}
+
+{% block content %}
+
+
+	<h1 class ="centered "> Faites vos recherches de Vols </h1>
+
+	<form action = "" method = "post">
+	{% csrf_token %}
+<table class ="centered ">{{form.as_table}}</table>
+	<input type="submit" class="btn btn-primary" value ="Valider" />
+	</form>
+{% if liste %}
+    <table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">Compagnie</th>
+      <th scope="col">Ville de départ</th>
+      <th scope="col">Aéroport de départ</th>
+      <th scope="col">Ville d'arrivée</th>
+        <th scope="col">Aéroport d'arrivée</th>
+        <th scope="col">Date de départ</th>
+        <th scope="col">Prix en euros(€)</th>
+        <th scope="col">Nombre de places disponibles</th>
+        <th scope="col">Action</th>
+    </tr>
+  </thead>
+  <tbody>
+  {% for voyage in liste %}
+		<tr>
+			<td>{{ voyage.compagnie }} </td>
+			<td>{{ voyage.ville_depart }} </td>
+			<td>{{ voyage.aeroport_depart}} </td>
+			<td>{{ voyage.ville_arrive}} </td>
+			<td>{{ voyage.aeroport_arrive }} </td>
+			<td>{{ voyage.date }}</td>
+            <td>{{ voyage.price }}</td>
+            {% if voyage.places > 0 %}
+                <td>{{ voyage.places }}</td>
+            <td><a href="{% url 'reservation' voyage.id %}" class="btn btn-secondary">
+                <i class="fas fa-stream"></i> Réserver
+            </a></td>
+            {% else %}
+                <td>0</td>
+                <td>Vol complet</td>
+            {% endif %}
+
+		</tr>
+{% endfor %}
+ {% endif  %}
+
+  </tbody>
+</table>
+
+{% endblock content %}
+
+

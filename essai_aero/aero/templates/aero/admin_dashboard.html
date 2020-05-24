@@ -1,0 +1,221 @@
+{% extends "aero/personnel_index.html" %}
+{% load static %}
+
+{% block content %}
+
+    <div class="page-inner">
+
+        <div class="row">
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-title">Les 10 destinations préférées des clients</div>
+                    </div>
+                    <div class="card-body">
+                        <div class="chart-container">
+                            <canvas id="barChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-title">Nombre de voyages et de réservations au cours de l'année</div>
+                    </div>
+                    <div class="card-body">
+                        <div class="chart-container">
+                            <canvas id="multipleLineChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+
+    <div class="row row-card-no-pd">
+        <div class="col-md-12">
+          <div class="card">
+            <div class="card-header">
+              <div class="card-head-row card-tools-still-right">
+                <h4 class="card-title">Géolocation des clients</h4>
+              </div>
+              <p class="card-category">
+              Pays d'origine des clients ayant utilisé NAYSAM</p>
+            </div>
+            <div class="card-body bg-secondary">
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="table-responsive table-hover table-sales">
+                    <table class="table">
+                      <tbody>
+
+                         {% for element in liste %}
+
+                          <tr>
+                          <td>
+                            <div class="flag">
+                              <img src="{% static 'img/flags/'|add:element.img|add:'.png'  %}" alt="indonesia">
+                            </div>
+                          </td>
+
+                          <td>{{ element.nom_pays}}</td>
+
+                          <td class="text-right">
+                            {{ element.number }}
+                          </td>
+
+                          <td class="text-right">
+                            {{ element.percentage }}%
+                          </td>
+                        </tr>
+                        {% endfor %}
+
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+                <div class="col-md-6 ">
+                  <div class="mapcontainer">
+                    <div id="map-example" class="vmap"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+    </div>
+
+
+
+
+{% endblock content %}
+
+{% block javascript %}
+
+
+
+    <script>
+
+
+        essai = ['CN','BR','FR'];
+
+
+    $('#map-example').vectorMap(
+
+		{
+			map: 'world_en',
+			backgroundColor: 'transparent',
+			borderColor: '#fff',
+			borderWidth: 2,
+			color: '#e4e4e4',
+			enableZoom: true,
+			hoverColor: '#35cd3a',
+			hoverOpacity: null,
+			normalizeFunction: 'linear',
+			scaleColors: ['#b6d6ff', '#005ace'],
+			selectedColor: '#35cd3a',
+			selectedRegions: {{ liste_codes|safe }},
+			showTooltip: true,
+			onRegionClick: function(element, code, region)
+			{
+				return false;
+			},
+			onResize: function (element, width, height) {
+				console.log('Map Size: ' +  width + 'x' +  height);
+			},
+            onRegionOver: function(element, code, region)
+			{
+				return true;
+			},
+		});
+</script>
+
+<script>
+		var barChart = document.getElementById('barChart').getContext('2d'),
+		multipleLineChart = document.getElementById('multipleLineChart').getContext('2d');
+
+
+		var myBarChart = new Chart(barChart, {
+			type: 'bar',
+			data: {
+				labels: {{ pays_pref|safe }},
+				datasets : [{
+					label: "Nombre de vols",
+					backgroundColor: 'rgb(23, 125, 255)',
+					borderColor: 'rgb(23, 125, 255)',
+					data: {{ effectif|safe }},
+				}],
+			},
+			options: {
+				responsive: true,
+				maintainAspectRatio: false,
+				scales: {
+					yAxes: [{
+						ticks: {
+							beginAtZero:true
+						}
+					}]
+				},
+			}
+		});
+
+
+		var myMultipleLineChart = new Chart(multipleLineChart, {
+			type: 'line',
+			data: {
+				labels: ["Janv", "Fév", "Mar", "Avr", "Mai", "Juin", "Juil", "Août", "Sept", "Oct", "Nov", "Déc"],
+				datasets: [{
+					label: "Nombre de voyages",
+					borderColor: "#1d7af3",
+					pointBorderColor: "#FFF",
+					pointBackgroundColor: "#1d7af3",
+					pointBorderWidth: 2,
+					pointHoverRadius: 4,
+					pointHoverBorderWidth: 1,
+					pointRadius: 4,
+					backgroundColor: 'transparent',
+					fill: true,
+					borderWidth: 2,
+					data: {{ courbe_voyages|safe }}
+				}, {
+					label: "Nombre de réservations",
+					borderColor: "#f3545d",
+					pointBorderColor: "#FFF",
+					pointBackgroundColor: "#f3545d",
+					pointBorderWidth: 2,
+					pointHoverRadius: 4,
+					pointHoverBorderWidth: 1,
+					pointRadius: 4,
+					backgroundColor: 'transparent',
+					fill: true,
+					borderWidth: 2,
+					data: {{ courbe_reservation|safe }}
+				}]
+			},
+			options : {
+				responsive: true,
+				maintainAspectRatio: false,
+				legend: {
+					position: 'top',
+				},
+				tooltips: {
+					bodySpacing: 4,
+					mode:"nearest",
+					intersect: 0,
+					position:"nearest",
+					xPadding:10,
+					yPadding:10,
+					caretPadding:10
+				},
+				layout:{
+					padding:{left:15,right:15,top:15,bottom:15}
+				}
+			}
+		});
+
+	</script>
+{% endblock javascript %}

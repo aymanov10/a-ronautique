@@ -1,0 +1,27 @@
+{% extends 'aero/personnel_index.html' %}
+{% load static %}
+
+    {% block content %}
+    <table id="example" class="table table-bordered table-hover">
+    <thead class="thead-dark">
+        <tr>
+            <td>Référence voyage</td>
+            <td>Email du client</td>
+            <td>Type de demande</td>
+            <td>Message</td>
+        </tr>
+    </thead>
+    <tbody>
+        {% for rec in les_reclamations %}
+            <tr>
+                <td>{{rec.ref_voyage}}</td>
+                <td>{{rec.email_client}}</td>
+                <td>{{rec.categorie}}</td>
+                <td>{{rec.message}}</td>
+
+            </tr>
+        {% endfor %}
+    </tbody>
+
+</table>
+    {% endblock content %}

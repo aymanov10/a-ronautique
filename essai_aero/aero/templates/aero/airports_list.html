@@ -1,0 +1,37 @@
+{% extends 'aero/personnel_index.html' %}
+{% load static %}
+
+    {% block content %}
+    <table id="example" class="table table-bordered table-hover">
+    <thead class="thead-dark">
+        <tr>
+            <td>Name</td>
+            <td>City</td>
+            <td>Country</td>
+            <td>IATA</td>
+            <td>ICAO</td>
+            <td>Latitude</td>
+            <td>Longitude</td>
+            <td>Altitude</td>
+        </tr>
+    </thead>
+    <tbody>
+        {% for airport in airports_list%}
+            <tr>
+                <td>{{airport.name}}</td>
+                <td>{{airport.city}}</td>
+                <td>{{airport.country}}</td>
+                <td>{{airport.IATA_airport}}</td>
+                <td>{{airport.ICAO_airport}}</td>
+                <td>{{airport.latitude}}</td>
+                <td>{{airport.longitude}}</td>
+                <td>{{airport.altitude}}</td>
+
+            </tr>
+        {% endfor %}
+    </tbody>
+
+</table>
+    {% endblock content %}
+
+

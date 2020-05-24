@@ -1,0 +1,37 @@
+{% extends 'aero/personnel_index.html' %}
+{% load static %}
+
+    {% block content %}
+    <table id="example" class="table table-bordered table-hover">
+    <thead class="thead-dark">
+        <tr>
+            <td>Numéro de voyage</td>
+            <td>Compagnie</td>
+            <td>Ville de départ</td>
+            <td>Aéroport de départ</td>
+            <td>Ville d'arrivée</td>
+            <td>Aéroport d'arrivée</td>
+            <td>Date</td>
+            <td>Prix</td>
+
+        </tr>
+    </thead>
+    <tbody>
+        {% for voyage in les_voyages %}
+            <tr>
+                <td>{{voyage.id}}</td>
+                <td>{{voyage.compagnie}}</td>
+                <td>{{voyage.ville_depart}}</td>
+                <td>{{voyage.aeroport_depart}}</td>
+                <td>{{voyage.ville_arrive}}</td>
+                <td>{{voyage.aeroport_arrive}}</td>
+                <td>{{voyage.date}}</td>
+                <td>{{voyage.price}}</td>
+            </tr>
+        {% endfor %}
+    </tbody>
+
+</table>
+    {% endblock content %}
+
+

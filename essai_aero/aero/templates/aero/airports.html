@@ -1,0 +1,46 @@
+{% extends 'aero/personnel_index.html' %}
+{% load static %}
+
+
+{% block content %}
+	<h1 class ="centered "> Recherchez un ou des aéroports  </h1>
+		
+	<form action = "" method = "post">
+	{% csrf_token %}
+<table class ="centered ">{{form.as_table}}</table>
+	<input type="submit" class="btn btn-primary" value ="Valider" />
+	</form>
+{% if liste %}
+    <table id="example" class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">Name</th>
+      <th scope="col">City</th>
+      <th scope="col">Country</th>
+      <th scope="col">IATA</th>
+        <th scope="col">ICAO</th>
+        <th scope="col">Latitude</th>
+        <th scope="col">Longitude</th>
+        <th scope="col">Altitude</th>
+    </tr>
+  </thead>
+  <tbody>
+  {% for aeroport in liste %}
+		<tr>
+			<td>{{ aeroport.name }} </td>
+			<td>{{ aeroport.city }} </td>
+			<td>{{ aeroport.country }} </td>
+			<td>{{ aeroport.IATA_airport }} </td>
+			<td>{{ aeroport.ICAO_airport }} </td>
+			<td>{{ aeroport.latitude}} </td>
+			<td>{{ aeroport.longitude }} </td>
+			<td>{{ aeroport.altitude}} </td>
+		</tr>
+{% endfor %}
+ {% endif  %}
+
+  </tbody>
+</table>
+
+{% endblock content %}
+

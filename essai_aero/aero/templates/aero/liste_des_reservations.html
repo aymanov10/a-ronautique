@@ -1,0 +1,25 @@
+{% extends 'aero/personnel_index.html' %}
+{% load static %}
+
+    {% block content %}
+    <table id="example" class="table table-bordered table-hover">
+    <thead class="thead-dark">
+        <tr>
+            <td>Numéro de voyage</td>
+            <td>Email du client</td>
+        </tr>
+    </thead>
+    <tbody>
+        {% for reservation in les_reservations %}
+            <tr>
+                <td>{{reservation.reference_voyage}}</td>
+                <td>{{reservation.mail_client}}</td>
+
+            </tr>
+        {% endfor %}
+    </tbody>
+
+</table>
+    {% endblock content %}
+
+

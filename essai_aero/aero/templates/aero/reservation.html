@@ -1,0 +1,26 @@
+{% extends 'aero/index.html' %}
+{% load static %}
+
+{% block content %}
+    <h2 class="centered">Page de réservations</h2>
+
+    <div class="col-md-10 offset-md-1 mt-5">
+            <div class="jumbotron">
+                <h5 class="centered">Saisissez vos coordonnées client et confirmez</h5>
+                <hr class="my-4">
+                <form action="" method="post" autocomplete="off">
+            {% csrf_token %}
+    <table class ="centered ">{{form.as_table}}</table>
+    <div class="row">
+        <div class="col-md-2">
+            <button type="submit" class="btn btn-success "><i class="fas fa-database"></i>
+                Valider</button>
+
+        </div>
+    </div>
+
+        </form>
+            </div>
+    </div>
+
+{% endblock content %}

@@ -1,0 +1,40 @@
+{% extends "aero/personnel_index.html" %}
+{% load static %}
+
+
+{% block content %}
+
+<h1 class ="centered "> Recherchez un ou plusieurs vols</h1>
+
+	<form action = "" method = "post">
+	{% csrf_token %}
+<table class ="centered ">{{form.as_table}}</table>
+	<input type="submit" class="btn btn-primary" value ="Valider" />
+	</form>
+{% if liste %}
+    <table id="example" class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">Compagnie</th>
+      <th scope="col">Ville de départ</th>
+      <th scope="col">Aéroport de départ</th>
+      <th scope="col">Ville d'arrivée</th>
+        <th scope="col">Aéroport d'arrivée</th>
+    </tr>
+  </thead>
+  <tbody>
+  {% for vol in liste %}
+		<tr>
+			<td>{{ vol.airline }} </td>
+			<td>{{ vol.departure_city}} </td>
+			<td>{{ vol.departure_airport }} </td>
+			<td>{{ vol.arrival_city }} </td>
+			<td>{{ vol.arrival_airport }} </td>
+		</tr>
+{% endfor %}
+ {% endif  %}
+
+  </tbody>
+</table>
+
+{% endblock content %}

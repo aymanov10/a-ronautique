@@ -1,0 +1,108 @@
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projet Aeronautique</title>
+
+    <link rel="stylesheet" href={% static "css/bootstrap.min.css" %}>
+     <link rel="stylesheet" href={% static "css/jquery.dataTables.min.css" %}>
+
+    <link rel="stylesheet" href={% static "css/style3.css" %}>
+
+
+</head>
+<body>
+
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <a class="navbar-brand" href="#">Bienvenue {{ request.user.username }}</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+
+        <li class="nav-item">
+        <a class="nav-link" href="{% url 'ajout_voyage' %}">Ajout de voyages </a>
+      </li>
+
+        <li class="nav-item">
+        <a class="nav-link " href="{% url 'dahsboard_admin' %}">Dashboard Index</a>
+        </li>
+        <li class="nav-item dropdown">
+      <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Listes</a>
+      <div class="dropdown-menu">
+           <a class="dropdown-item" href="{% url 'liste_des_vols' %}">Liste des vols dispo</a>
+          <a class="dropdown-item" href="{% url 'liste_des_aeroports' %}">Liste des aéroports</a>
+            <a class="dropdown-item" href="{% url 'liste_des_voyages' %}">Liste des voyages</a>
+          <a class="dropdown-item" href="{% url 'liste_des_reservations' %}">Liste des réservations</a>
+          <a class="dropdown-item" href="{% url 'liste_des_clients' %}">Liste des clients</a>
+          <a class="dropdown-item" href="{% url 'liste_des_compagnies' %}">Liste des compagnies</a>
+      </div>
+    </li>
+
+        <li class="nav-item">
+        <a class="nav-link " href="{% url 'register_page' %}">Ajouter personnel</a>
+      </li>
+
+        <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Recherches</a>
+            <div class="dropdown-menu">
+                <a class="dropdown-item " href="{% url 'airports' %}">Rechercher un aéroport</a>
+                <a class="dropdown-item " href="{% url 'recherche_de_vol' %}">Rechercher un vol</a>
+            </div>
+
+      </li>
+         <li class="nav-item">
+        <a class="nav-link " href="{% url 'liste_des_reclamations' %}">Visualiser les réclamations</a>
+      </li>
+
+         <li class="nav-item">
+        <a class="nav-link " href="{% url 'welcome' %}">Se déconnecter</a>
+      </li>
+    </ul>
+
+
+  </div>
+</nav>
+<div class="container">
+
+            {% block content %}
+                {% endblock content %}
+</div>
+
+ <script type="text/javascript" src={% static "js/jquery-3.5.0.min.js" %}></script>
+         <script type="text/javascript" src={% static "js/popper.min.js" %}></script>
+         <script type="text/javascript" src={% static "js/jquery-ui-1.12.1.custom/jquery-ui.min.js" %}></script>
+        <script type="text/javascript" src={% static "js/jquery-ui-touch-punch/jquery.ui.touch-punch.min.js" %}></script>
+        <script type="text/javascript" src={% static "js/jquery-scrollbar/jquery.scrollbar.min.js" %}></script>
+        <script type="text/javascript" src={% static "js/jquery.sparkline/jquery.sparkline.min.js" %}></script>
+        <script type="text/javascript" src={% static "js/chart-circle/circles.min.js" %}></script>
+        <script type="text/javascript" src={% static "js/jquery.dataTables.min.js" %}></script>
+        <script type="text/javascript" src="{% static "js/chart.js/chart.min.js"%}"></script>
+    <script type="text/javascript" src={% static "js/bootstrap.min.js" %}></script>
+          <script type="text/javascript" src={% static "js/jqvmap/jquery.vmap.min.js" %}></script>
+          <script type="text/javascript" src={% static "js/jqvmap/maps/jquery.vmap.world.js" %}></script>
+
+<script type="text/javascript">
+ $(document).ready(function() {
+    $('#example').DataTable( {
+        "pagingType": "full_numbers"
+    } );
+} );
+  </script>
+<script type="text/javascript">
+ $(document).ready(function() {
+    $('#example2').DataTable( {
+        "pagingType": "full_numbers"
+    } );
+} );
+  </script>
+{% block javascript %}{% endblock javascript %}
+
+
+
+
+</body>
+</html>

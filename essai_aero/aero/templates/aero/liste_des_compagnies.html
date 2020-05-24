@@ -1,0 +1,26 @@
+{% extends "aero/personnel_index.html" %}
+{% load static %}
+
+{% block content %}
+
+     <table id="example" class="table table-bordered table-hover">
+    <thead class="thead-dark">
+        <tr>
+            <td>Nom de la compagnie</td>
+            <td>IATA</td>
+            <td>ICAO</td>
+        </tr>
+    </thead>
+    <tbody>
+        {% for compagnie in les_compagnies %}
+            <tr>
+                <td>{{compagnie.name}}</td>
+                <td>{{compagnie.IATA_airline}}</td>
+                <td>{{compagnie.ICAO_airline}}</td>
+
+            </tr>
+        {% endfor %}
+    </tbody>
+    
+    
+{% endblock content %}

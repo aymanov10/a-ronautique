@@ -18,6 +18,10 @@ Notre trinôme est le suivant  :
     
      
   
+  
+  -Nous récupérons des informations de la page https://openflights.org/data.html  
+  -Nous avons téléchargé tous les fichiers csv sauf celui concernant la base de données des avions et nous les avons analysé et nettoyé dans excel avant leur utilisation
+  - le dossier ele
 
 
 

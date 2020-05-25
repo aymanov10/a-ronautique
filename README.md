@@ -40,18 +40,18 @@ Notre trinôme est le suivant  :
   
   
   Tâches accomplies côté client:
-  -rechercher un voyage en saisissant la ville de départ,la ville d'arrivée et la date,choisir le vol qui nous plait et réserver
+  - rechercher un voyage en saisissant la ville de départ,la ville d'arrivée et la date,choisir le vol qui nous plait et réserver
   - le client peut faire une réclamation en saissant la référence du voyage,son email,choisir le type de demande et écrire son message
   
   Tâches réalisées côté adminstrateur:
-  -visualiser la liste des aéroports,des vols,des clients,réservations,réclamations
+  - visualiser la liste des aéroports,des vols,des clients,réservations,réclamations
   - visualiser dans le Dashboard les différentes nationalités de nos clients avec leurs pays sur une map
-  -visualiser les différentes réservations et programmations de vols au cours de l'année
+  - visualiser les différentes réservations et programmations de vols au cours de l'année
   - visualiser les 10 destinations préférées de nos clients 
-  -ajouter des voyages
-  -ajouter des administrateurs
-  -supprimer des vols
-  -rechercher des aéroports
+  - ajouter des voyages
+  - ajouter des administrateurs
+  - supprimer des vols
+  - rechercher des aéroports
   
   
 

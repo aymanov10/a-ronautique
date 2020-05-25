@@ -35,6 +35,7 @@ Notre trinôme est le suivant  :
   - saisissez manuellement l'adresse http://127.0.0.1:8000/page_ajout_client et ajoutez un utilisateur parce que si vous n'êtes pas enregistré dans la table "auth_user" vous ne pourrez pas accéder à l'interface administrateur.
   
   - Après avoir créé l'utilisateur vous pourrez vous connecter
+  - Pour se connecter vous pouvez essayer de mettre un faux mot de passe par exemple et vous verrez bien que sans des données correctes vous ne serez pas redirigé vers la page d'adminstration
   
   
 

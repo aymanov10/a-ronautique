@@ -21,7 +21,9 @@ Notre trinôme est le suivant  :
   
   -Nous récupérons des informations de la page https://openflights.org/data.html  
   -Nous avons téléchargé tous les fichiers csv sauf celui concernant la base de données des avions et nous les avons analysé et nettoyé dans excel avant leur utilisation
-  - le dossier ele
+  - le dossier essai_aero/elements contient tous les fichiers csv que nous avons eu à utiliser
+  - le fichier donnees.py contient tout le code nous ayant permi de peupler les tables Airports,Routes,Airlines... à partir des fichiers csv étant donné que ces informations ne proviennent pas de nous mais du site
+  
 
 
 

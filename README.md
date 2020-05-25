@@ -33,7 +33,8 @@ Notre trinôme est le suivant  :
   - Pour pouvoir se connecter à l'interface administrateur:
   - assurez-vous d'avoir fait la migration du projet et d'utiliser postgres
   - saisissez manuellement l'adresse http://127.0.0.1:8000/page_ajout_client et ajoutez un utilisateur parce que si vous n'êtes pas enregistré dans la table "auth_user" vous ne pourrez pas accéder à l'interface administrateur.
-  -Après avoir créé l'utilisateur vous pourrez vous connecter
+  
+  - Après avoir créé l'utilisateur vous pourrez vous connecter
   
   
 

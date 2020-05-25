@@ -26,9 +26,9 @@ Notre trinôme est le suivant  :
   -le fichier forms.py contient la définition de certains formulaires que nous avons à utiliser 
   - Nous avons utilisé Bootstrap, charts.js et jqvmap pour la mise en forme
   - Pour les requêtes select nous avons les différentes listes 
-  - Pour la recherche nous avons implémenté la recherche de vols et d'aéroport comme pourrez le voir
+  - Pour la recherche nous avons implémenté la recherche de vols et d'aéroport comme vous pourrez le voir
   - Pour les requêtes Delete nous avons inclu la possibilté de supprimer des voyages à partir de la liste des voyages
-  - Pour les requêtes Update nous avons choisi de l'implémenter au niveau de la réservation des billets: lorsqu'on réserve un billet pour une destination précise,après réservation,le nombre de places est diminué de 1 automatiquement (on fait un update de la table) jusqu'à ce qu'il y ai 0 places et lorsqu'il y a 0 places,lorsque l'utilisateur lance la recherche,l'itinéraire est affichée mais avec un message disant qu'il n'y a plus de places et aussi le bouton réserver n'apparait pas (on ne peut pas réserver un vol s'il n'y a pas de places).
+  - Pour les requêtes Update nous avons choisi de l'implémenter au niveau de la réservation des billets: lorsqu'on réserve un billet pour une destination précise,après réservation,le nombre de places est diminué de 1 automatiquement (on fait un update de la table) jusqu'à ce qu'il y ai 0 places et lorsqu'il y a 0 places,lorsque l'utilisateur lance la recherche,l'itinéraire est affichée mais avec un message disant qu'il n'y a plus de places et aussi le bouton réserver n'apparait plus (on ne peut pas réserver un vol s'il n'y a pas de places).
   
   - Pour pouvoir se connecter à l'interface administrateur:
   - assurez-vous d'avoir fait la migration du projet et d'utiliser postgres

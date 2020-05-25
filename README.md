@@ -25,7 +25,7 @@ Notre trinôme est le suivant  :
   - le fichier donnees.py contient tout le code nous ayant permi de peupler les tables Airports,Routes,Airlines... à partir des fichiers csv étant donné que ces informations ne proviennent pas de nous mais du site
   -le fichier forms.py contient la définition de certains formulaires que nous avons à utiliser 
   - Nous avons utilisé Bootstrap, charts.js et jqvmap pour la mise en forme
-  -Pour les requêtes create,nous avons ajoutons de nouveaux voyages,nous ajoutons de nouveaux adminstrateurs
+  -Pour les requêtes create,nous ajoutons de nouveaux voyages,nous ajoutons de nouveaux adminstrateurs
   - Pour les requêtes select nous avons les différentes listes 
   - Pour la recherche nous avons implémenté la recherche de vols et d'aéroport comme vous pourrez le voir
   - Pour les requêtes Delete nous avons inclu la possibilté de supprimer des voyages à partir de la liste des voyages
@@ -37,6 +37,21 @@ Notre trinôme est le suivant  :
   
   - Après avoir créé l'utilisateur vous pourrez vous connecter
   - Pour se connecter vous pouvez essayer de mettre un faux mot de passe par exemple et vous verrez bien que sans des données correctes vous ne serez pas redirigé vers la page d'adminstration
+  
+  
+  Tâches accomplies côté client:
+  -rechercher un voyage en saisissant la ville de départ,la ville d'arrivée et la date,choisir le vol qui nous plait et réserver
+  - le client peut faire une réclamation en saissant la référence du voyage,son email,choisir le type de demande et écrire son message
+  
+  Tâches réalisées côté adminstrateur:
+  -visualiser la liste des aéroports,des vols,des clients,réservations,réclamations
+  - visualiser dans le Dashboard les différentes nationalités de nos clients avec leurs pays sur une map
+  -visualiser les différentes réservations et programmations de vols au cours de l'année
+  - visualiser les 10 destinations préférées de nos clients 
+  -ajouter des voyages
+  -ajouter des administrateurs
+  -supprimer des vols
+  -rechercher des aéroports
   
   
 

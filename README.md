@@ -30,6 +30,11 @@ Notre trinôme est le suivant  :
   - Pour les requêtes Delete nous avons inclu la possibilté de supprimer des voyages à partir de la liste des voyages
   - Pour les requêtes Update nous avons choisi de l'implémenter au niveau de la réservation des billets: lorsqu'on réserve un billet pour une destination précise,après réservation,le nombre de places est diminué de 1 automatiquement (on fait un update de la table) jusqu'à ce qu'il y ai 0 places et lorsqu'il y a 0 places,lorsque l'utilisateur lance la recherche,l'itinéraire est affichée mais avec un message disant qu'il n'y a plus de places et aussi le bouton réserver n'apparait pas (on ne peut pas réserver un vol s'il n'y a pas de places).
   
+  - Pour pouvoir se connecter à l'interface administrateur:
+  - assurez-vous d'avoir fait la migration du projet et d'utiliser postgres
+  - saisissez manuellement l'adresse http://127.0.0.1:8000/page_ajout_client et ajoutez un utilisateur parce que si vous n'êtes pas enregistré dans la table "auth_user" vous ne pourrez pas accéder à l'interface administrateur.
+  -Après avoir créé l'utilisateur vous pourrez vous connecter
+  
   
 
 

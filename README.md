@@ -25,6 +25,7 @@ Notre trinôme est le suivant  :
   - le fichier donnees.py contient tout le code nous ayant permi de peupler les tables Airports,Routes,Airlines... à partir des fichiers csv étant donné que ces informations ne proviennent pas de nous mais du site
   -le fichier forms.py contient la définition de certains formulaires que nous avons à utiliser 
   - Nous avons utilisé Bootstrap, charts.js et jqvmap pour la mise en forme
+  -Pour les requêtes create,nous avons ajoutons de nouveaux voyages,nous ajoutons de nouveaux adminstrateurs
   - Pour les requêtes select nous avons les différentes listes 
   - Pour la recherche nous avons implémenté la recherche de vols et d'aéroport comme vous pourrez le voir
   - Pour les requêtes Delete nous avons inclu la possibilté de supprimer des voyages à partir de la liste des voyages
